@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OMS Bengkel</title>
+<meta name="theme-color" content="#111827">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="boot" class="boot">Memuat…</div>
+
+<div id="login" class="login" hidden>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <div class="brand dark"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><div><b id="login-title">OMS Bengkel</b><span>Order Management System</span></div></div>
+    <h1 id="login-h">Masuk</h1>
+    <div class="field" id="f-name" hidden><label for="l-name">Nama lengkap</label><input id="l-name" class="in" autocomplete="name"></div>
+    <div class="field"><label for="l-email">Email</label><input id="l-email" class="in" type="email" required autocomplete="username"></div>
+    <div class="field"><label for="l-pass">Password</label><input id="l-pass" class="in" type="password" required minlength="8" autocomplete="current-password"></div>
+    <button class="btn primary" type="submit" id="l-submit" style="min-height:46px">Masuk</button>
+    <div id="l-msg" class="small" role="status"></div>
+    <button type="button" class="link-btn" id="l-toggle">Belum punya akun? Daftar</button>
+  </form>
+</div>
+
+<div class="app" id="app" hidden>
+  <aside class="side">
+    <div class="brand"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><div><b id="ws-name">OMS Bengkel</b><span>Order Management</span></div></div>
+    <nav class="nav" id="nav" aria-label="Menu utama"></nav>
+    <div class="side-foot">
+      <div id="me"></div>
+      <button type="button" data-act="logout">Keluar</button>
+    </div>
+  </aside>
+  <main id="main"></main>
+</div>
+<div class="overlay" id="modal" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
